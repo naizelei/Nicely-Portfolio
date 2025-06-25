@@ -6,11 +6,11 @@ const Contact = () => {
   // Static profile data
   const profile = {
     email: "nicely.eleccion@gmail.com",
-    phone: "+63 32 264 7345",
+    phone: "+63 32 263 7247",
     location: "Cebu, Philippines",
-    github: "https://github.com/nicely",
-    linkedin: "https://linkedin.com/in/nicely",
-    twitter: "https://twitter.com/nicely"
+    github: "https://github.com/naizelei",
+    linkedin: "https://linkedin.com/in/nicely-jane-eleccion",
+    twitter: "https://twitter.com/naizelei"
   };
 
   const [formData, setFormData] = useState({

@@ -7,13 +7,13 @@ const About = () => {
   const profile = {
     name: "Nicely",
     title: "Full Stack Developer",
-    bio: "Passionate developer with expertise in modern web technologies. I love creating beautiful, functional, and user-friendly applications that solve real-world problems. With a strong foundation in both frontend and backend development, I specialize in building scalable web applications using the latest technologies and best practices.",
-    email: "nicely@example.com",
-    phone: "+1 234 567 8900",
-    location: "Your City, Country",
-    github: "https://github.com/nicely",
-    linkedin: "https://linkedin.com/in/nicely",
-    twitter: "https://twitter.com/nicely"
+    bio: "I'm a licensed Chemical Engineer who found a true passion in programming. Now a full-stack developer, I specialize in building modern, scalable, and user-friendly web applications. With experience in both frontend and backend development, I focus on clean code, intuitive design, and delivering solutions that bring real value to users and businesses alike.",
+    email: "nicely.eleccion@gmail.com",
+    phone: "+63 32 263 7247",
+    location: "Cebu, Philippines",
+    github: "https://github.com/naizelei",
+    linkedin: "https://linkedin.com/in/nicely-jane-eleccion",
+    twitter: "https://twitter.com/naizelei"
   };
 
   return (
