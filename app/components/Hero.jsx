@@ -1,13 +1,48 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { assets } from "@/assets/assets";
 import Image from "next/image";
+
+// TypeWriter component for typing animation
+const TypeWriter = ({ text, speed = 100, delay = 500 }) => {
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsTyping(true);
+    }, delay);
+
+    return () => clearTimeout(timer);
+  }, [delay]);
+
+  useEffect(() => {
+    if (!isTyping) return;
+
+    if (currentIndex < text.length) {
+      const timer = setTimeout(() => {
+        setDisplayText(prev => prev + text[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, speed);
+
+      return () => clearTimeout(timer);
+    }
+  }, [currentIndex, text, speed, isTyping]);
+
+  return (
+    <span className="md:text-center sm:text-base lg:text-2xl text-gray-600 dark:text-gray-300">
+      {displayText}
+      <span className="animate-pulse">|</span>
+    </span>
+  );
+};
 
 const Hero = () => {
   // Static profile data
   const profile = {
     name: "Nicely Jane",
     title: "Chemical Engineer turned Software Engineer",
-    bio: "I traded lab goggles for a laptop and haven’t looked back. As a full-stack developer, I build clean, intuitive web and mobile apps with real-world impact. I’m all about thoughtful UX, efficient code, and keeping things running smoother than your morning coffee.",
+    bio: "Passionate developer with expertise in modern web technologies. I love creating beautiful, functional, and user-friendly applications that solve real-world problems.",
     resume: "/sample-resume.pdf",
     nicely: assets.nicely
   };
@@ -24,9 +59,7 @@ const Hero = () => {
                 className="w-4 h-4 lg:w-8 lg:h-8 inline-block mr-2"
                 alt="wave"
               />
-              <span className="md:text-center sm:text-base lg:text-2xl text-gray-600 dark:text-gray-300">
-                Hello, I'm
-              </span>
+              <TypeWriter text="Hello, I'm" speed={80} delay={300} />
             </div>
             
             <h1 className="text-lg md:text-xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
@@ -44,7 +77,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
                 href="#contact"
-                className="bg-[#D661FF] hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-colors duration-300 flex items-center justify-center"
+                className="bg-[#D661FF] hover:bg-[#E6A0FF] text-white px-8 py-3 rounded-full font-semibold transition-colors duration-300 flex items-center justify-center"
               >
                 Contact Me
                 <Image
@@ -59,7 +92,7 @@ const Hero = () => {
                   href={profile.resume}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-2 border-[#D661FF] text-[#D661FF] hover:bg-blue-600 hover:text-white px-8 py-3 rounded-full font-semibold transition-colors duration-300 flex items-center justify-center"
+                  className="border-2 border-[#D661FF] text-[#D661FF] hover:bg-[#E6A0FF] hover:text-white px-8 py-3 rounded-full font-semibold transition-colors duration-300 flex items-center justify-center"
                 >
                   <Image
                     src={assets.download_icon}

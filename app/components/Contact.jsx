@@ -5,9 +5,9 @@ import Image from "next/image";
 const Contact = () => {
   // Static profile data
   const profile = {
-    email: "nicely@example.com",
-    phone: "+1 234 567 8900",
-    location: "Your City, Country",
+    email: "nicely.eleccion@gmail.com",
+    phone: "+63 32 264 7345",
+    location: "Cebu, Philippines",
     github: "https://github.com/nicely",
     linkedin: "https://linkedin.com/in/nicely",
     twitter: "https://twitter.com/nicely"

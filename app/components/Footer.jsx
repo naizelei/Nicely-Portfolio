@@ -3,11 +3,11 @@ import React from "react";
 const Footer = () => {
   // Static profile data
   const profile = {
-    name: "Nicely",
+    name: "Nicely Eleccion",
     bio: "Passionate developer creating amazing digital experiences.",
     email: "nicely.eleccion@gmail.com",
-    phone: "+1 234 567 8900",
-    location: "Your City, Country"
+    phone: "+63 32 263 7247",
+    location: "Cebu, Philippines"
   };
 
   const currentYear = new Date().getFullYear();
