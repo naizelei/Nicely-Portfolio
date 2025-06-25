@@ -2,6 +2,7 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import Image from "next/image";
 import { 
   User, 
   Code, 
@@ -276,14 +277,15 @@ function AdminDashboard() {
                 >
                   <div className="h-48 bg-gray-100 dark:bg-gray-700 relative">
                     {project.image && (
-                      <img
+                      <Image
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover"
+                        fill
+                        className="object-cover"
                       />
                     )}
                     {project.featured && (
-                      <div className="absolute top-2 left-2 bg-blue-600 text-white px-2 py-1 rounded text-xs">
+                      <div className="absolute top-2 left-2 bg-blue-600 text-white px-2 py-1 rounded text-xs z-10">
                         Featured
                       </div>
                     )}

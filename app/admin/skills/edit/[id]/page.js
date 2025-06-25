@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, Save } from "lucide-react";
 
@@ -28,11 +28,7 @@ export default function EditSkill({ params }) {
     { value: "other", label: "Other" },
   ];
 
-  useEffect(() => {
-    fetchSkill();
-  }, []);
-
-  const fetchSkill = async () => {
+  const fetchSkill = useCallback(async () => {
     try {
       const response = await fetch(`/api/skills/${params.id}`);
       if (response.ok) {
@@ -54,7 +50,11 @@ export default function EditSkill({ params }) {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [params.id]);
+
+  useEffect(() => {
+    fetchSkill();
+  }, [fetchSkill]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

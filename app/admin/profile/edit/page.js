@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function EditProfile() {
   const router = useRouter();
@@ -128,7 +129,13 @@ export default function EditProfile() {
             <input type="file" accept="image/*" onChange={e => handleFileUpload(e, "avatar")} disabled={uploading} />
           </div>
           {profile.avatar && (
-            <img src={profile.avatar} alt="Avatar Preview" className="mt-2 w-24 h-24 rounded-full object-cover border" />
+            <Image 
+              src={profile.avatar} 
+              alt="Avatar Preview" 
+              width={96}
+              height={96}
+              className="mt-2 rounded-full object-cover border" 
+            />
           )}
         </div>
         <div>

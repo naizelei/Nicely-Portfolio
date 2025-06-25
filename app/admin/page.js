@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Eye, EyeOff } from "lucide-react";
 
 export default function AdminLogin() {
@@ -137,12 +138,12 @@ export default function AdminLogin() {
           </form>
 
           <div className="mt-6 text-center">
-            <a
+            <Link
               href="/"
               className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 text-sm"
             >
               ← Back to Portfolio
-            </a>
+            </Link>
           </div>
         </div>
       </div>
