@@ -40,9 +40,9 @@ const TypeWriter = ({ text, speed = 100, delay = 500 }) => {
 const Hero = () => {
   // Static profile data
   const profile = {
-    name: "Nicely Jane",
-    title: "Chemical Engineer turned Software Engineer",
-   bio: "I traded lab goggles for a laptop and haven’t looked back. As a full-stack developer, I build clean, intuitive web and mobile apps with real-world impact. I’m all about thoughtful UX, efficient code, and keeping things running smoother than your morning coffee.",
+    name: "Nicely Jane Eleccion",
+    title: "a chemical engineer turned software engineer",
+   bio: "From balancing chemical equations — now I balance divs and deadlines. As a full-stack developer, I build clean, intuitive web and mobile apps with real-world impact. I’m all about thoughtful UX, efficient code, and keeping things running smoother than your morning coffee.",
     resume: "/Resume_Nicely-Jane-Eleccion-2025.pdf",
     nicely: assets.nicely
   };
@@ -59,11 +59,11 @@ const Hero = () => {
                 className="w-4 h-4 lg:w-8 lg:h-8 inline-block mr-2"
                 alt="wave"
               />
-              <TypeWriter text="Hello, I'm" speed={80} delay={300} />
+              <span>Hello, I'm</span>
             </div>
             
             <h1 className="text-lg md:text-xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              {profile.name}
+            <TypeWriter text={profile.name} speed={80} delay={300} />
             </h1>
             
             <h2 className="text-lg md:text-xl lg:text-3xl font-semibold text-[#D661FF] dark:text-blue-400 mb-8">
