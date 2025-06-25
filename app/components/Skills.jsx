@@ -172,22 +172,6 @@ const Skills = () => {
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-3">
                   {skill.name}
                 </h3>
-
-                {/* Proficiency Bar */}
-                <div className="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 mb-2">
-                  <div
-                    className="h-2 rounded-full transition-all duration-500"
-                    style={{
-                      width: `${skill.proficiency}%`,
-                      backgroundColor: skill.color,
-                    }}
-                  ></div>
-                </div>
-
-                {/* Percentage */}
-                <span className="text-sm text-gray-600 dark:text-gray-400">
-                  {skill.proficiency}%
-                </span>
               </div>
             </div>
           ))}

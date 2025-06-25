@@ -5,7 +5,7 @@ const Footer = () => {
   const profile = {
     name: "Nicely",
     bio: "Passionate developer creating amazing digital experiences.",
-    email: "nicely@example.com",
+    email: "nicely.eleccion@gmail.com",
     phone: "+1 234 567 8900",
     location: "Your City, Country"
   };

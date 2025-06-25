@@ -5,9 +5,9 @@ import Image from "next/image";
 const Hero = () => {
   // Static profile data
   const profile = {
-    name: "Nicely",
+    name: "Nicely Jane",
     title: "Chemical Engineer turned Software Engineer",
-    bio: "Passionate developer with expertise in modern web technologies. I love creating beautiful, functional, and user-friendly applications that solve real-world problems.",
+    bio: "I traded lab goggles for a laptop and haven’t looked back. As a full-stack developer, I build clean, intuitive web and mobile apps with real-world impact. I’m all about thoughtful UX, efficient code, and keeping things running smoother than your morning coffee.",
     resume: "/sample-resume.pdf",
     nicely: assets.nicely
   };
