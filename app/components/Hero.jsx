@@ -2,8 +2,15 @@ import React from "react";
 import { assets } from "@/assets/assets";
 import Image from "next/image";
 
-const Hero = ({ profile }) => {
-  if (!profile) return null;
+const Hero = () => {
+  // Static profile data
+  const profile = {
+    name: "Nicely",
+    title: "Chemical Engineer turned Software Engineer",
+    bio: "Passionate developer with expertise in modern web technologies. I love creating beautiful, functional, and user-friendly applications that solve real-world problems.",
+    resume: "/sample-resume.pdf",
+    nicely: assets.nicely
+  };
 
   return (
     <section id="top" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
@@ -26,7 +33,7 @@ const Hero = ({ profile }) => {
               {profile.name}
             </h1>
             
-            <h2 className="text-lg md:text-xl lg:text-3xl font-semibold text-blue-600 dark:text-blue-400 mb-8">
+            <h2 className="text-lg md:text-xl lg:text-3xl font-semibold text-[#D661FF] dark:text-blue-400 mb-8">
               {profile.title}
             </h2>
             
@@ -37,7 +44,7 @@ const Hero = ({ profile }) => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
                 href="#contact"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-colors duration-300 flex items-center justify-center"
+                className="bg-[#D661FF] hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-colors duration-300 flex items-center justify-center"
               >
                 Contact Me
                 <Image
@@ -52,7 +59,7 @@ const Hero = ({ profile }) => {
                   href={profile.resume}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-full font-semibold transition-colors duration-300 flex items-center justify-center"
+                  className="border-2 border-[#D661FF] text-[#D661FF] hover:bg-blue-600 hover:text-white px-8 py-3 rounded-full font-semibold transition-colors duration-300 flex items-center justify-center"
                 >
                   <Image
                     src={assets.download_icon}
@@ -71,7 +78,7 @@ const Hero = ({ profile }) => {
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-blue-400 to-purple-600 p-2">
                 <div className="w-full h-full rounded-full bg-white dark:bg-gray-800  flex items-center justify-center">
                   <Image
-                    src={profile.nicely || assets.nicely}
+                    src={profile.nicely}
                     className="w-full h-full rounded-full object-cover"
                     alt={profile.name}
                     width={400}

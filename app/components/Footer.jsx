@@ -1,6 +1,15 @@
 import React from "react";
 
-const Footer = ({ profile }) => {
+const Footer = () => {
+  // Static profile data
+  const profile = {
+    name: "Nicely",
+    bio: "Passionate developer creating amazing digital experiences.",
+    email: "nicely@example.com",
+    phone: "+1 234 567 8900",
+    location: "Your City, Country"
+  };
+
   const currentYear = new Date().getFullYear();
 
   return (
@@ -10,10 +19,10 @@ const Footer = ({ profile }) => {
           {/* Logo and Description */}
           <div className="text-center md:text-left">
             <h3 className="text-2xl font-bold mb-4">
-              {profile?.name || 'Portfolio'}
+              {profile.name}
             </h3>
             <p className="text-gray-400">
-              {profile?.bio || 'Passionate developer creating amazing digital experiences.'}
+              {profile.bio}
             </p>
           </div>
 
@@ -43,21 +52,21 @@ const Footer = ({ profile }) => {
           <div className="text-center md:text-right">
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-gray-400">
-              {profile?.email && (
+              {profile.email && (
                 <div>
                   <a href={`mailto:${profile.email}`} className="hover:text-white transition-colors">
                     {profile.email}
                   </a>
                 </div>
               )}
-              {profile?.phone && (
+              {profile.phone && (
                 <div>
                   <a href={`tel:${profile.phone}`} className="hover:text-white transition-colors">
                     {profile.phone}
                   </a>
                 </div>
               )}
-              {profile?.location && (
+              {profile.location && (
                 <div>{profile.location}</div>
               )}
             </div>
@@ -67,7 +76,7 @@ const Footer = ({ profile }) => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © {currentYear} {profile?.name || 'Portfolio'}. All rights reserved.
+            © {currentYear} {profile.name}. All rights reserved.
           </p>
           <p className="text-gray-500 text-sm mt-2">
             Built with ❤️ using Next.js and Tailwind CSS

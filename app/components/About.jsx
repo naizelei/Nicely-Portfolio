@@ -2,8 +2,19 @@ import React from "react";
 import { assets } from "@/assets/assets";
 import Image from "next/image";
 
-const About = ({ profile }) => {
-  if (!profile) return null;
+const About = () => {
+  // Static profile data
+  const profile = {
+    name: "Nicely",
+    title: "Full Stack Developer",
+    bio: "Passionate developer with expertise in modern web technologies. I love creating beautiful, functional, and user-friendly applications that solve real-world problems. With a strong foundation in both frontend and backend development, I specialize in building scalable web applications using the latest technologies and best practices.",
+    email: "nicely@example.com",
+    phone: "+1 234 567 8900",
+    location: "Your City, Country",
+    github: "https://github.com/nicely",
+    linkedin: "https://linkedin.com/in/nicely",
+    twitter: "https://twitter.com/nicely"
+  };
 
   return (
     <section id="about" className="py-20 bg-white dark:bg-gray-900">

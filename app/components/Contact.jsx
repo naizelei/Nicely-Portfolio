@@ -2,7 +2,17 @@ import React, { useState } from "react";
 import { assets } from "@/assets/assets";
 import Image from "next/image";
 
-const Contact = ({ profile }) => {
+const Contact = () => {
+  // Static profile data
+  const profile = {
+    email: "nicely@example.com",
+    phone: "+1 234 567 8900",
+    location: "Your City, Country",
+    github: "https://github.com/nicely",
+    linkedin: "https://linkedin.com/in/nicely",
+    twitter: "https://twitter.com/nicely"
+  };
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,8 +40,6 @@ const Contact = ({ profile }) => {
       setIsSubmitting(false);
     }, 1000);
   };
-
-  if (!profile) return null;
 
   return (
     <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
@@ -209,7 +217,7 @@ const Contact = ({ profile }) => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                  placeholder="Subject"
+                  placeholder="What's this about?"
                 />
               </div>
               
@@ -224,15 +232,15 @@ const Contact = ({ profile }) => {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"
-                  placeholder="Your message..."
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                  placeholder="Tell me about your project or opportunity..."
                 />
               </div>
               
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#D661FF] hover:bg-blue-700 disabled:bg-blue-400 text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center"
+                className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center"
               >
                 {isSubmitting ? (
                   <>
@@ -241,12 +249,12 @@ const Contact = ({ profile }) => {
                   </>
                 ) : (
                   <>
-                    Send Message
                     <Image
                       src={assets.send_icon}
-                      className="w-5 h-5 ml-2"
+                      className="w-5 h-5 mr-2"
                       alt="send"
                     />
+                    Send Message
                   </>
                 )}
               </button>
