@@ -23,7 +23,7 @@ const About = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Image */}
-          <div className="flex">
+          <div className="flex justify-center">
             {/* Large screens: overlapping images */}
             <div className="hidden lg:block w-[480px] h-[480px] self-center">
               <div className="relative w-full h-full">
