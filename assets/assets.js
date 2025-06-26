@@ -1,4 +1,3 @@
-import user_image from './user-image.png';
 import code_icon from './code-icon.png';
 import code_icon_dark from './code-icon-dark.png';
 import edu_icon from './edu-icon.png';
@@ -15,9 +14,10 @@ import logo from './logo.png';
 import logo_dark from './logo_dark.png';
 import nicelogo from './nicelogo.png';
 import nicely from './nicely.jpg';
+import about from './about.jpg';
+import hero from './hero.jpg';
 import mail_icon from './mail_icon.png';
 import mail_icon_dark from './mail_icon_dark.png';
-import profile_img from './profile-img.png';
 import download_icon from './download-icon.png';
 import hand_icon from './hand-icon.png';
 import header_bg_color from './header-bg-color.png';
@@ -39,7 +39,6 @@ import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 
 export const assets = {
-    user_image,
     code_icon,
     code_icon_dark,
     edu_icon,
@@ -51,13 +50,14 @@ export const assets = {
     figma,
     git,
     mongodb,
+    hero,
     right_arrow_white,
     logo,
     logo_dark,
     nicelogo,
     mail_icon,
     mail_icon_dark,
-    profile_img,
+    about,
     download_icon,
     hand_icon,
     header_bg_color,

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -118,16 +119,14 @@ const Skills = () => {
     : skills.filter(skill => skill.category === activeCategory);
 
   return (
-    <section id="services" className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="services" className="py-20 bg-gray-50 dark:bg-gray-800 scroll-mt-24">
       <div className="container mx-auto px-4 lg:px-8 xl:px-[8%]">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             My Skills
           </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Here are the technologies and tools I work with. I'm constantly learning and adding new skills to my repertoire.
-          </p>
+          <div className="w-24 h-1 bg-[#E6A0FF] mx-auto mb-8"></div>
+         
         </div>
 
         {/* Category Filter */}
@@ -136,10 +135,10 @@ const Skills = () => {
             <button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className={`px-6 py-2 font-medium transition-colors duration-300 cursor-pointer ${
+              className={`text-base lg:text-xl px-6 py-2 font-medium transition-colors duration-300 cursor-pointer ${
                 activeCategory === category.id
-                  ? 'text-black underline underline-offset-8'
-                  : 'text-gray-400 dark:text-gray-300 hover:underline hover:underline-offset-8 hover:text-black hover:transition-all duration-300'
+                  ? 'text-black dark:text-white underline underline-offset-8'
+                  : 'text-gray-400 dark:text-gray-300 hover:underline hover:underline-offset-8 hover:text-black dark:hover:text-white hover:transition-all duration-300'
               }`}
             >
               {category.name}
@@ -148,10 +147,18 @@ const Skills = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-          {filteredSkills.map((skill) => (
-            <div
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: 'easeInOut' }}
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6"
+        >
+          {filteredSkills.map((skill, idx) => (
+            <motion.div
               key={skill._id}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: idx * 0.09, ease: 'easeInOut' }}
               className="p-2 cursor-pointer hover:scale-105 transition-all duration-300"
             >
               <div className="text-center">
@@ -173,9 +180,9 @@ const Skills = () => {
                   {skill.name}
                 </h3>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {filteredSkills.length === 0 && (
           <div className="text-center py-12">

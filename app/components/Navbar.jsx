@@ -35,19 +35,24 @@ const Navbar = () => {
 
         <ul className="hidden md:flex items-center gap-6 lg:gap-8 rounded-full font-semibold text-gray-700 dark:text-white/60 text-base lg:text-xl">
           <li>
-            <Link href="#top">Home</Link>
+            <Link href="#top" className="hover:font-bold">
+              Home
+            </Link>
           </li>
           <li>
-            <Link href="#about">About Me</Link>
+            <Link href="#about" className="hover:font-bold">
+              About
+            </Link>
           </li>
           <li>
-            <Link href="#services">Services</Link>
+            <Link href="#services" className="hover:font-bold">
+              Services
+            </Link>
           </li>
           <li>
-            <Link href="#work">My Work</Link>
-          </li>
-          <li>
-            <Link href="#contact">Contact me</Link>
+            <Link href="#work" className="hover:font-bold">
+              Projects
+            </Link>
           </li>
         </ul>
 

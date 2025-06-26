@@ -1,69 +1,150 @@
 import React from "react";
 import { assets } from "@/assets/assets";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const About = () => {
   // Static profile data
   const profile = {
     name: "Nicely",
     title: "Full Stack Developer",
-    bio: "I'm a licensed Chemical Engineer who found a true passion in programming. Now a full-stack developer, I specialize in building modern, scalable, and user-friendly web applications. With experience in both frontend and backend development, I focus on clean code, intuitive design, and delivering solutions that bring real value to users and businesses alike.",
-    email: "nicely.eleccion@gmail.com",
-    phone: "+63 32 263 7247",
-    location: "Cebu, Philippines",
-    github: "https://github.com/naizelei",
-    linkedin: "https://linkedin.com/in/nicely-jane-eleccion",
-    twitter: "https://twitter.com/naizelei"
+    bio: `Hi! I'm a licensed Chemical Engineer who discovered a genuine passion for programming — and made the leap. Now a full-stack software engineer, I design and build scalable, intuitive web applications that aim to solve real-world problems and create seamless user experiences.\n\nI've worked across both frontend and backend stacks, building everything from business dashboards to customer-facing interfaces. I'm proud to say I can take a project and run with it — from planning to production — with minimal supervision. I'm comfortable working solo or within a team, and I've also had the chance to lead small teams and help others grow along the way.\n\nOver the years, I've received multiple Employee of the Month awards, not just for performance, but for being a strong communicator and reliable teammate. I understand the importance of hitting deadlines, giving updates without being asked, and keeping quality high — even when things move fast.\n\nWhether I'm working remotely or in a corporate setting, I bring focus, energy, and a sense of ownership to everything I build. I love the challenge of solving problems with code, and I take pride in writing clean, maintainable solutions that people actually enjoy using.\n\nLet's build something awesome!`,
   };
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900">
+    <section id="about" className="py-20 bg-white dark:bg-gray-900 scroll-mt-24">
       <div className="container mx-auto px-4 lg:px-8 xl:px-[8%]">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             About Me
           </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
+          <div className="w-24 h-1 bg-[#E6A0FF] mx-auto"></div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Image */}
-          <div className="flex justify-center lg:justify-start">
-            <div className="relative">
-              <div className="sm:w- sm:h-48 lg:w-100 lg:h-100 rounded-2xl bg-gradient-to-br from-blue-400 to-purple-600">
-                <div className="w-full h-full rounded-2xl bg-white dark:bg-gray-800 p-4">
+          <div className="flex">
+            {/* Large screens: overlapping images */}
+            <div className="hidden lg:block w-[480px] h-[480px] self-center">
+              <div className="relative w-full h-full">
+                <motion.div
+                  initial={{ opacity: 0, y: 60 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}
+                  className="absolute -top-55 -left-40 w-full h-full z-0"
+                >
                   <Image
-                    src={ assets.nicely}
-                    className="w-full h-full rounded-2xl object-cover"
+                    src={assets.about}
+                    alt="About background"
+                    width={400}
+                    height={400}
+                    className="w-full h-full rounded-2xl object-cover opacity-90 shadow-lg border-4 border-white dark:border-gray-900"
+                    priority={false}
+                  />
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+                  className="absolute top-40 left-10 w-full h-full z-10"
+                >
+                  <Image
+                    src={assets.nicely}
+                    className="w-full h-full rounded-2xl object-cover shadow-2xl border-4 border-white dark:border-gray-900"
                     alt={profile.name}
                     width={400}
                     height={400}
+                    priority={true}
                   />
-                </div>
+                </motion.div>
               </div>
-              
-              {/* Experience badge */}
-              <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-4 rounded-full shadow-lg">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600">3+</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-300">Years</div>
-                </div>
-              </div>
+            </div>
+            {/* Medium screens: side by side */}
+            <div className="hidden sm:flex lg:hidden gap-4 w-full h-auto self-center px-10">
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: 'easeOut' }}
+                className="w-1/2 h-full relative"
+              >
+                <Image
+                  src={assets.about}
+                  alt="About background"
+                  width={200}
+                  height={200}
+                  className="w-full h-full rounded-2xl object-cover shadow-lg border-4 border-white dark:border-gray-900s"
+                  priority={false}
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
+                className="w-1/2 h-full relative"
+              >
+                <Image
+                  src={assets.nicely}
+                  className="w-full h-full rounded-2xl object-cover shadow-2xl border-4 border-white dark:border-gray-900"
+                  alt={profile.name}
+                  width={200}
+                  height={200}
+                  priority={true}
+                />
+              </motion.div>
+            </div>
+            {/* Small screens: stacked column */}
+            <div className="flex flex-col gap-4 w-[220px] h-[440px] sm:hidden self-center">
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: 'easeOut' }}
+                className="w-full h-1/2 relative"
+              >
+                <Image
+                  src={assets.about}
+                  alt="About background"
+                  width={200}
+                  height={200}
+                  className="w-full h-full rounded-2xl object-cover shadow-lg border-4 border-white dark:border-gray-900"
+                  priority={false}
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
+                className="w-full h-1/2 relative"
+              >
+                <Image
+                  src={assets.nicely}
+                  className="w-full h-full rounded-2xl object-cover shadow-2xl border-4 border-white dark:border-gray-900"
+                  alt={profile.name}
+                  width={200}
+                  height={200}
+                  priority={true}
+                />
+              </motion.div>
             </div>
           </div>
 
           {/* Right - Content */}
-          <div>
+          <div className="pt-16 lg:pt-0">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               {profile.title}
             </h3>
             
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-              {profile.bio}
-            </p>
+            {/* Render bio as paragraphs */}
+            {profile.bio.split(/\n\n/).map((paragraph, idx) => (
+              <p
+                key={idx}
+                className="text-sm md:text-lg  text-gray-600 dark:text-gray-300 mb-8 leading-relaxed text-justify tracking-widest"
+              >
+                {paragraph}
+              </p>
+            ))}
 
             {/* Personal Info */}
-            <div className="space-y-4">
+            {/* <div className="space-y-4">
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mr-4">
                   <Image
@@ -106,10 +187,10 @@ const About = () => {
                   </div>
                 </div>
               )}
-            </div>
+            </div> */}
 
             {/* Social Links */}
-            <div className="flex space-x-4 mt-8">
+            {/* <div className="flex space-x-4 mt-8">
               {profile.github && (
                 <a
                   href={profile.github}
@@ -148,7 +229,7 @@ const About = () => {
                   </svg>
                 </a>
               )}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

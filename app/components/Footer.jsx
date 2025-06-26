@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   // Static profile data
   const profile = {
-    name: "Nicely Eleccion",
+    name: "Nicely Jane Eleccion",
     bio: "Passionate developer creating amazing digital experiences.",
     email: "nicely.eleccion@gmail.com",
     phone: "+63 32 263 7247",

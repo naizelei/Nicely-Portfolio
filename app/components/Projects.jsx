@@ -93,32 +93,30 @@ const Projects = () => {
     : projects.filter(project => project.category === activeCategory);
 
   return (
-    <section id="work" className="py-20 bg-white dark:bg-gray-900">
+    <section id="work" className="py-20 bg-white dark:bg-gray-900 scroll-mt-24">
       <div className="container mx-auto px-4 lg:px-8 xl:px-[8%]">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             My Projects
           </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Here are some of the projects I've worked on. Each project represents a unique challenge and learning experience.
-          </p>
+          <div className="w-24 h-1 bg-[#E6A0FF] mx-auto mb-8"></div>
+        
         </div>
 
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((category) => (
-             <button
-             key={category.id}
-             onClick={() => setActiveCategory(category.id)}
-             className={`px-6 py-2 font-medium transition-colors duration-300 cursor-pointer ${
-               activeCategory === category.id
-                 ? 'text-black underline underline-offset-8'
-                 : 'text-gray-400 dark:text-gray-300 hover:underline hover:underline-offset-8 hover:text-black hover:transition-all duration-300'
-             }`}
-           >
-             {category.name}
-           </button>
+            <button
+            key={category.id}
+            onClick={() => setActiveCategory(category.id)}
+            className={`text-base lg:text-xl px-6 py-2 font-medium transition-colors duration-300 cursor-pointer ${
+              activeCategory === category.id
+                ? 'text-black dark:text-white underline underline-offset-8'
+                : 'text-gray-400 dark:text-gray-300 hover:underline hover:underline-offset-8 hover:text-black dark:hover:text-white hover:transition-all duration-300'
+            }`}
+          >
+            {category.name}
+          </button>
           ))}
         </div>
 
@@ -159,7 +157,7 @@ const Projects = () => {
                   {project.technologies?.map((tech, index) => (
                     <span
                       key={index}
-                      className="bg-[#E6A0FF] dark:bg-[#D661FF]-900 text-gray-600 dark:text-blue-200 px-2 py-1 rounded-full text-xs font-medium"
+                      className="bg-[#E6A0FF] dark:bg-[#D661FF]-900 text-gray-600 dark:text-gray-600 px-2 py-1 rounded-full text-xs font-medium"
                     >
                       {tech}
                     </span>
@@ -167,13 +165,13 @@ const Projects = () => {
                 </div>
 
                 {/* Project Links */}
-                <div className="flex gap-3">
+                {/* <div className="flex gap-3">
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-[#D661FF] hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors duration-300"
+                      className="flex-1 bg-[#D661FF] hover:bg-[#E6A0FF] text-white text-center py-2 px-4 rounded-lg font-medium transition-colors duration-300"
                     >
                       Live Demo
                     </a>
@@ -189,7 +187,7 @@ const Projects = () => {
                       GitHub
                     </a>
                   )}
-                </div>
+                </div> */}
               </div>
             </div>
           ))}
