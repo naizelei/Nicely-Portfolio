@@ -100,7 +100,7 @@ const Skills = () => {
       _id: '11',
       name: 'Tailwind CSS',
       category: 'frontend',
-      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
+      iconUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSDKn3vA2YUbXzN0ZC3gALWJ08gJN-Drl15w&s',
       proficiency: 90,
       color: '#06B6D4'
     },
@@ -122,7 +122,7 @@ const Skills = () => {
     <section id="services" className="py-20 bg-gray-50 dark:bg-gray-800 scroll-mt-20">
       <div className="container mx-auto px-4 lg:px-8 xl:px-[8%]">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             My Skills
           </h2>
           <div className="w-24 h-1 bg-[#E6A0FF] mx-auto mb-8"></div>
@@ -135,7 +135,7 @@ const Skills = () => {
             <button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className={`text-base lg:text-xl px-6 py-2 font-medium transition-colors duration-300 cursor-pointer ${
+              className={`text-sm md:text-lg lg:text-xl px-2 md:px-6 py-2 font-medium transition-colors duration-300 cursor-pointer ${
                 activeCategory === category.id
                   ? 'text-black dark:text-white underline underline-offset-8'
                   : 'text-gray-400 dark:text-gray-300 hover:underline hover:underline-offset-8 hover:text-black dark:hover:text-white hover:transition-all duration-300'
@@ -176,7 +176,7 @@ const Skills = () => {
                 </div>
 
                 {/* Skill Name */}
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-3">
+                <h3 className="text-sm md:text-base font-semibold text-gray-900 dark:text-white mb-3">
                   {skill.name}
                 </h3>
               </div>

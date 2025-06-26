@@ -109,7 +109,7 @@ const Projects = () => {
             <button
             key={category.id}
             onClick={() => setActiveCategory(category.id)}
-            className={`text-base lg:text-xl px-6 py-2 font-medium transition-colors duration-300 cursor-pointer ${
+            className={`text-sm md:text-lg lg:text-xl px-2 md:px-6 py-2 font-medium transition-colors duration-300 cursor-pointer ${
               activeCategory === category.id
                 ? 'text-black dark:text-white underline underline-offset-8'
                 : 'text-gray-400 dark:text-gray-300 hover:underline hover:underline-offset-8 hover:text-black dark:hover:text-white hover:transition-all duration-300'
