@@ -65,7 +65,8 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(true)}
               className="text-gray-900 dark:text-white"
             >
-              <Image src={assets.menu_white} className="w-7 h-7" alt="menu" />
+              <Image src={assets.menu_black} className="w-7 h-7 dark:hidden" alt="menu" />
+              <Image src={assets.menu_white} className="w-7 h-7 hidden dark:block" alt="menu" />
             </button>
           </div>
 
