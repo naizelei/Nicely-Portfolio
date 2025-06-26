@@ -93,7 +93,7 @@ const Projects = () => {
     : projects.filter(project => project.category === activeCategory);
 
   return (
-    <section id="work" className="py-20 bg-white dark:bg-gray-900 scroll-mt-24">
+    <section id="work" className="py-20 bg-white dark:bg-gray-900 scroll-mt-20">
       <div className="container mx-auto px-4 lg:px-8 xl:px-[8%]">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
