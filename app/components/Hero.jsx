@@ -196,7 +196,7 @@ const Hero = () => {
           {/* Right Content - Profile Image */}
           <div className="flex justify-center lg:justify-end order-1 lg:order-2">
             <div className="relative">
-              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-[#E6A0FF] to-[#B8E9C6] p-2">
+              <div className="w-80 h-80 md:w-100 md:h-100 lg:w-120 lg:h-120 rounded-full bg-gradient-to-br from-[#E6A0FF] to-[#B8E9C6] p-2">
                 <motion.div
                   ref={imgRef}
                   initial={{ rotateX: 0, rotateY: 0 }}
