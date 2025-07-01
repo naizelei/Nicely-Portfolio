@@ -49,7 +49,7 @@ const Hero = () => {
   const profile = {
     name: "Nicely Jane Eleccion",
     title: "a chemical engineer turned software engineer",
-    bio: "”Instead of balancing chemical equations, I now balance divs and deadlines. As a full-stack developer, I build clean, intuitive web and mobile apps with real-world impact. I'm all about thoughtful UX, efficient code, and keeping things running smoother than your morning coffee.",
+    bio: "Instead of balancing chemical equations, I now balance divs and deadlines. As a full-stack developer, I build clean, intuitive web and mobile apps with real-world impact. I'm all about thoughtful UX, efficient code, and keeping things running smoother than your morning coffee.",
     resume: "/Resume_Nicely-Jane-Eleccion-2025.pdf",
     nicely: assets.hero
   };

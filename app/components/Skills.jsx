@@ -111,7 +111,39 @@ const Skills = () => {
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
       proficiency: 75,
       color: '#F24E1E'
-    }
+    },
+    {
+      _id: '13',
+      name: 'PHP',
+      category: 'backend',
+      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
+      proficiency: 85,
+      color: '#777BB4'
+    },
+    {
+      _id: '14',
+      name: 'Laravel',
+      category: 'backend',
+      iconUrl: 'https://ih1.redbubble.net/image.2120691091.5447/st,small,507x507-pad,600x600,f8f8f8.jpg',
+      proficiency: 80,
+      color: '#FF2D20'
+    },
+    {
+      _id: '15',
+      name: 'Vue.js',
+      category: 'frontend',
+      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
+      proficiency: 80,
+      color: '#42b883'
+    },
+    {
+      _id: '16',
+      name: 'AWS',
+      category: 'devops',
+      iconUrl: 'https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Logo.png',
+      proficiency: 75,
+      color: '#FF9900'
+    },
   ];
   
   const filteredSkills = activeCategory === 'all' 
